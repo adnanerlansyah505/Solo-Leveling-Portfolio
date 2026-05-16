@@ -1,5 +1,5 @@
 <template>
-  <div class="group p-6 glass-heavy rounded-lg border border-purple-500/20 hover:border-purple-500/60 transition-all duration-300 cursor-pointer overflow-hidden"
+  <div class="group relative p-6 glass-heavy rounded-md border border-purple-500/20 hover:border-purple-500/60 transition-all duration-300 cursor-pointer overflow-hidden"
        @mouseenter="isHovered = true"
        @mouseleave="isHovered = false">
     <!-- Background image -->
@@ -52,6 +52,7 @@
           :href="project.github"
           target="_blank"
           class="flex-1 py-2 px-4 text-sm font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 rounded-lg transition-all duration-300 hover:shadow-lg"
+          v-if="project?.github"
         >
           GitHub
         </a>

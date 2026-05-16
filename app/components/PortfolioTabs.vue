@@ -1,47 +1,74 @@
 <template>
-  <div class="w-full p-6 glass-heavy rounded-lg border border-purple-500/30">
+  <div class="w-full p-6 glass-heavy rounded-none border border-purple-500/30 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-purple-500"></div>
+    <div class="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-purple-500"></div>
+    <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-purple-500"></div>
+    <div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-purple-500"></div>
     <!-- Portfolio Directory Header -->
     <h2 class="text-3xl font-bold text-glow mb-8 uppercase tracking-wider text-center">Portfolio Directory</h2>
     
     <!-- Tab Navigation -->
-    <div class="flex flex-wrap gap-2 mb-8 border-b border-purple-500/30">
-      <button
-        type="button"
-        v-for="tab in tabs"
-        :key="tab.id"
-        @click="activeTab = tab.id"
-        class="px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 relative group"
-        :class="[
-          activeTab === tab.id 
-            ? 'text-purple-400' 
-            : 'text-gray-400 hover:text-gray-300'
-        ]"
-      >
-        {{ tab.label }}
-        <!-- Animated underline -->
-        <div
-          v-if="activeTab === tab.id"
-          class="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300"
-          :style="{ width: '100%' }"
-        ></div>
-        <!-- Hover glow -->
-        <div class="absolute -inset-2 bg-purple-500/0 group-hover:bg-purple-500/10 rounded-lg transition-colors -z-10"></div>
-      </button>
+    <div class="flex items-center justify-between gap-2 mb-8 border-b border-purple-500/30">
+      <div class="flex flex-wrap gap-2">
+        <button
+          type="button"
+          v-for="tab in tabs"
+          :key="tab.id"
+          @click="activeTab = tab.id"
+          class="px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 relative group"
+          :class="[
+            activeTab === tab.id 
+              ? 'text-purple-400' 
+              : 'text-gray-400 hover:text-gray-300'
+          ]"
+        >
+          {{ tab.label }}
+          <!-- Animated underline -->
+          <div
+            v-if="activeTab === tab.id"
+            class="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300"
+            :style="{ width: '100%' }"
+          ></div>
+          <!-- Hover glow -->
+          <div class="absolute -inset-2 bg-purple-500/0 group-hover:bg-purple-500/10 rounded-md transition-colors -z-10"></div>
+        </button>
+      </div>
+
+      <div v-if="activeTab === 1" class="flex gap-2">
+        <button
+          :class="['px-4 py-2 text-sm font-semibold uppercase tracking-wide rounded-md', aboutSubTab === 'bio' ? 'bg-purple-700/20 text-purple-300' : 'text-gray-400 hover:text-gray-300']"
+          @click="aboutSubTab = 'bio'"
+        >
+          Bio & Vision
+        </button>
+        <button
+          :class="['px-4 py-2 text-sm font-semibold uppercase tracking-wide rounded-md', aboutSubTab === 'education' ? 'bg-purple-700/20 text-purple-300' : 'text-gray-400 hover:text-gray-300']"
+          @click="aboutSubTab = 'education'"
+        >
+          Education
+        </button>
+        <button
+          :class="['px-4 py-2 text-sm font-semibold uppercase tracking-wide rounded-md', aboutSubTab === 'experience' ? 'bg-purple-700/20 text-purple-300' : 'text-gray-400 hover:text-gray-300']"
+          @click="aboutSubTab = 'experience'"
+        >
+          Experience
+        </button>
+      </div>
     </div>
 
     <!-- Tab Content -->
     <div class="min-h-64">
       <!-- About Tab -->
       <div v-if="activeTab === 1" class="animate-fade-in">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="p-6 bg-gray-900/30 border border-purple-500/20 rounded-lg">
+        <div v-if="aboutSubTab === 'bio'" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-6 bg-gray-900/30 border border-purple-500/20 rounded-md">
             <h3 class="text-lg font-bold text-purple-400 mb-4 uppercase">Bio & Vision</h3>
             <p class="text-gray-300 leading-relaxed text-sm">
               Full-Stack Sorcerer passionate about scalable, secure architectures and intuitive UX. 
               Dedicated to mastering the tech stacks of the future.
             </p>
           </div>
-          <div class="p-6 bg-gray-900/30 border border-purple-500/20 rounded-lg">
+          <div class="p-6 bg-gray-900/30 border border-purple-500/20 rounded-md">
             <h3 class="text-lg font-bold text-purple-400 mb-4 uppercase">Personal Statement</h3>
             <p class="text-gray-300 leading-relaxed text-sm">
               Well-articulated personal statement of the and embracing development vision, 
@@ -49,25 +76,41 @@
             </p>
           </div>
         </div>
+
+        <div v-if="aboutSubTab === 'education'" class="space-y-4">
+          <div class="p-6 bg-gray-900/30 border border-purple-500/20 rounded-md" v-for="education in educations" :key="education.id">
+            <h3 class="text-md font-bold text-purple-400 mb-2 uppercase">{{ education.institution }} • {{ education.year }}</h3>
+            <p class="text-sm text-gray-400 mt-2">{{ education.description }}</p>
+          </div>
+        </div>
+
+        <div v-if="aboutSubTab === 'experience'" class="space-y-4">
+          <div class="p-6 bg-gray-900/30 border border-purple-500/20 rounded-md" v-for="experience in experiences" :key="experience.id">
+            <h3 class="text-md font-bold text-purple-400 mb-2 uppercase">
+              {{ experience.position }} • {{ experience.company }} ({{ experience.year }})
+            </h3>
+            <p class="text-sm text-gray-300">{{ experience.description }}</p>
+          </div>
+        </div>
       </div>
 
       <!-- Projects Tab -->
       <div v-if="activeTab === 2" class="animate-fade-in">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
         </div>
       </div>
 
       <!-- Skills Tab -->
       <div v-if="activeTab === 3" class="animate-fade-in">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <SkillCategory v-for="(skills, category) in skillCategories" :key="category" :title="category" :skills="skills" />
         </div>
       </div>
 
       <!-- Social Media Tab -->
       <div v-if="activeTab === 4" class="animate-fade-in">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <SocialCard v-for="social in socials" :key="social.id" :social="social" />
         </div>
       </div>
@@ -83,8 +126,11 @@ import { skills } from '~/data/skills'
 import ProjectCard from './ProjectCard.vue'
 import SkillCategory from './SkillCategory.vue'
 import SocialCard from './SocialCard.vue'
+import { educations } from '~/data/educations'
+import { experiences } from '~/data/experiences'
 
 const activeTab = ref(1)
+const aboutSubTab = ref('bio')
 
 const tabs = [
   { id: 1, label: 'About' },
@@ -97,7 +143,7 @@ const skillCategories = {
   Frontend: skills.frameworks,
   Backend: skills.databases,
   'API Design': skills.apiDesign,
-  DevOps: skills.devOps,
+  // DevOps: skills.devOps,
   Architecture: skills.architecture,
   'AI / Tools': skills.aiIntegration
 }

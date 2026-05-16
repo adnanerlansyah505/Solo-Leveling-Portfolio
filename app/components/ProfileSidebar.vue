@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:w-80 p-6 glass-heavy rounded-lg border border-purple-500/30 h-fit">
+  <div class="w-full md:w-80 p-6 glass-heavy rounded-none border border-purple-500/30 h-full">
     <!-- Profile Header -->
     <div class="text-center mb-6">
       <!-- Avatar with glow -->
@@ -22,19 +22,19 @@
 
     <!-- Profile Stats -->
     <div class="grid grid-cols-2 gap-3 mb-6 text-sm">
-      <div class="p-3 bg-gray-900/40 border border-purple-500/20 rounded-lg">
+      <div class="p-3 bg-gray-900/40 border border-purple-500/20 rounded-md">
         <p class="text-gray-400 text-xs">Title</p>
         <p class="text-purple-400 font-semibold">{{ profile.title }}</p>
       </div>
-      <div class="p-3 bg-gray-900/40 border border-purple-500/20 rounded-lg">
+      <div class="p-3 bg-gray-900/40 border border-purple-500/20 rounded-md">
         <p class="text-gray-400 text-xs">Location</p>
         <p class="text-purple-400 font-semibold">{{ profile.location }}</p>
       </div>
-      <div class="p-3 bg-gray-900/40 border border-purple-500/20 rounded-lg">
+      <div class="p-3 bg-gray-900/40 border border-purple-500/20 rounded-md">
         <p class="text-gray-400 text-xs">Join Date</p>
         <p class="text-purple-400 font-semibold">{{ profile.joinDate }}</p>
       </div>
-      <div class="p-3 bg-gray-900/40 border border-purple-500/20 rounded-lg">
+      <div class="p-3 bg-gray-900/40 border border-purple-500/20 rounded-md">
         <p class="text-gray-400 text-xs">Status</p>
         <p class="text-green-400 font-semibold">Active</p>
       </div>

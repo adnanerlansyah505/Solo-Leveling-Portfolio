@@ -2,7 +2,7 @@
   <a
     :href="social.url"
     target="_blank"
-    class="group p-6 glass-heavy rounded-lg border border-purple-500/20 hover:border-cyan-500/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block cursor-pointer overflow-hidden"
+    class="group p-6 glass-heavy rounded-md border border-purple-500/20 hover:border-cyan-500/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block cursor-pointer overflow-hidden"
   >
     <!-- Background glow on hover -->
     <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-purple-500/0 group-hover:from-cyan-500/10 group-hover:to-purple-500/10 transition-colors pointer-events-none"></div>

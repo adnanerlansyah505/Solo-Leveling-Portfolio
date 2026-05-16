@@ -28,9 +28,13 @@
 
     <!-- Main Content (shown after modal acceptance) -->
     <div v-if="hasAccessed" class="relative z-10 min-h-screen">
-      <div class="max-w-7xl mx-auto px-4 py-8 space-y-8">
+      <div class="max-w-7xl mx-auto p-4 space-y-8">
         <!-- Header with system info -->
-        <div class="flex justify-between items-center p-6 glass-heavy rounded-lg border border-purple-500/30">
+        <div class="flex justify-between items-center p-6 glass-heavy rounded-none border border-purple-500/30 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-purple-500"></div>
+          <div class="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-purple-500"></div>
+          <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-purple-500"></div>
+          <div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-purple-500"></div>
           <div>
             <h1 class="text-3xl font-bold text-glow uppercase tracking-widest">Portfolio Leveling System</h1>
             <p class="text-sm text-gray-400 font-mono mt-2">Portfolio v1.0 | Unauthorized access monitored.</p>
@@ -42,22 +46,20 @@
         </div>
 
         <!-- Main Dashboard Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <!-- Left Sidebar (1 column) -->
-          <div class="lg:col-span-1">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <!-- Left Sidebar (3 of 12) -->
+          <div class="lg:col-span-3 h-full">
             <ProfileSidebar />
           </div>
 
-          <!-- Main Content (3 columns) -->
-          <div class="lg:col-span-3">
-            <!-- Radar Chart -->
-            <RadarChart />
+          <!-- Combined Radar + Skill Progression (9 of 12) -->
+          <div class="lg:col-span-9 h-full">
+            <CombinedStats />
+          </div>
 
-            <!-- Skill Bars (Full width) -->
-            <SkillBars />
-
-            <!-- Portfolio Tabs -->
-            <PortfolioTabs class="mt-4" />
+          <!-- Portfolio Tabs (full width below) -->
+          <div class="lg:col-span-12">
+            <PortfolioTabs />
           </div>
         </div>
       </div>
@@ -77,8 +79,7 @@ import { ref, onMounted } from 'vue'
 import SystemInitializationModal from '~/components/SystemInitializationModal.vue'
 import ConfirmAccessModal from '~/components/ConfirmAccessModal.vue'
 import ProfileSidebar from '~/components/ProfileSidebar.vue'
-import RadarChart from '~/components/RadarChart.vue'
-import SkillBars from '~/components/SkillBars.vue'
+import CombinedStats from '~/components/CombinedStats.vue'
 import PortfolioTabs from '~/components/PortfolioTabs.vue'
 
 const STORAGE_KEY = 'solo-leveling-portfolio-session'

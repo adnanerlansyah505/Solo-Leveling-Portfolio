@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Adnan Erlansyah',
   class: 'Full-Stack Engineer',
-  title: 'Junior Developer',
+  title: 'Web Developer',
   company: 'PT. Raditya Alkademi',
   location: 'Bandung, Indonesia',
   joinDate: '2003.27.03',

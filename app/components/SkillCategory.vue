@@ -1,12 +1,12 @@
 <template>
-  <div class="p-6 glass-heavy rounded-lg border border-purple-500/20 hover:border-purple-500/60 transition-all duration-300">
+  <div class="p-6 glass-heavy rounded-md border border-purple-500/20 hover:border-purple-500/60 transition-all duration-300">
     <h4 class="text-sm font-bold text-purple-400 mb-4 uppercase tracking-wider">{{ title }}</h4>
     
     <div class="space-y-3">
       <div
         v-for="skill in skills"
         :key="skill.name"
-        class="p-3 bg-gray-900/30 border border-purple-500/20 rounded-lg hover:border-cyan-500/50 transition-all group cursor-default"
+        class="p-3 bg-gray-900/30 border border-purple-500/20 rounded-md hover:border-cyan-500/50 transition-all group cursor-default"
       >
         <div class="flex justify-between items-center">
           <span class="text-sm text-gray-300 group-hover:text-cyan-400 transition-colors">{{ skill.name }}</span>

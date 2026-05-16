@@ -6,7 +6,7 @@ export const projects = [
     tech: ['AstroJS', 'TailwindCSS'],
     status: 'Completed',
     github: 'https://github.com/adnanerlansyah505/Namina-Batik',
-    demo: 'https://github.com/adnanerlansyah505/Namina-Batik',
+    demo: 'https://namina-batik.vercel.app/',
     image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=500&h=300&fit=crop'
   },
   {
@@ -16,7 +16,7 @@ export const projects = [
     tech: ['AstroJS',  'TailwindCSS'],
     status: 'Completed',
     github: 'https://github.com/adnanerlansyah505/Surau-Darul-Hikmah-Portal',
-    demo: 'https://github.com/adnanerlansyah505/Surau-Darul-Hikmah-Portal',
+    demo: 'https://surau-darul-hikmah-portal.vercel.app/',
     image: 'https://images.unsplash.com/photo-1600105244719-8992fd1f1967?q=80&w=500&h=300&auto=format&fit=crop'
   },
   {
@@ -26,7 +26,7 @@ export const projects = [
     tech: ['NuxtJS', 'Drizzle ORM', 'PostgreSQL', 'TailwindCSS'],
     status: 'Completed',
     github: 'https://github.com/adnanerlansyah505/Library-Seats-Booking',
-    demo: 'https://github.com/adnanerlansyah505/Library-Seats-Booking',
+    // demo: 'https://github.com/adnanerlansyah505/Library-Seats-Booking',
     image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=300&fit=crop'
   },
   {
@@ -36,7 +36,7 @@ export const projects = [
     tech: ['NuxtJS', 'Drizzle ORM', 'PostgreSQL', 'TailwindCSS'],
     status: 'Completed',
     github: 'https://github.com/adnanerlansyah505/Online-Student-Registration-System',
-    demo: 'https://github.com/adnanerlansyah505/Online-Student-Registration-System',
+    // demo: 'https://github.com/adnanerlansyah505/Online-Student-Registration-System',
     image: 'https://images.unsplash.com/photo-1771922748624-b205cf5d002d?q=80&w=500&h=300&auto=format&fit=crop'
   },
   {
@@ -46,7 +46,27 @@ export const projects = [
     tech: ['Figma', 'UI Design', 'Prototyping'],
     status: 'Design',
     github: 'https://www.figma.com/design/zgci57DWPgu5Z5tofd9wwK/E-Commerce?m=auto&t=nLSp216baXVLgJOl-6',
-    demo: 'https://www.figma.com/design/zgci57DWPgu5Z5tofd9wwK/E-Commerce?m=auto&t=nLSp216baXVLgJOl-6',
+    // demo: 'https://www.figma.com/design/zgci57DWPgu5Z5tofd9wwK/E-Commerce?m=auto&t=nLSp216baXVLgJOl-6',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop'
+  },
+  {
+    id: 6,
+    name: 'LMS (Learning Management System) Alkademi',
+    description: 'A comprehensive learning management system designed for educational institutions to facilitate online learning and course management.',
+    tech: ['NuxtJS', 'Golang', 'PostgreSQL', 'Bootstrap'],
+    status: 'Completed',
+    // github: 'https://github.com/adnanerlansyah505/LMS-Alkademi',
+    // demo: 'https://github.com/adnanerlansyah505/LMS-Alkademi',
+    image: 'https://alkademi.id/assets/images/Main.png'
+  },
+  {
+    id: 7,
+    name: 'Job Portal',
+    description: 'A job portal that connects job seekers with employers, featuring job listings, application tracking, and user profiles.',
+    tech: ['NuxtJS', 'Prisma', 'PostgreSQL', 'TailwindCSS'],
+    status: 'Completed',
+    // github: 'https://github.com/adnanerlansyah505/Job-Portal',
+    demo: 'https://jobs.alkademi.id',
+    image: '/assets/images/projects/job-portal.png'
   }
 ];

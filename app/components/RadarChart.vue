@@ -1,39 +1,35 @@
 <template>
-  <div class="w-full p-6 glass-heavy rounded-t-lg border border-purple-500/30">
-    <h2 class="text-2xl font-bold text-glow mb-6 uppercase tracking-wider">Dev Mastery Radar</h2>
+  <div class="w-full h-full flex flex-col">
+    <h2 class="text-xl font-bold text-glow mb-4 uppercase tracking-wider">Dev Mastery Radar</h2>
     
-    <div class="flex justify-center items-center">
-      <svg :viewBox="`0 0 ${size} ${size}`" :width="size" :height="size" class="max-w-md w-full">
-        <!-- Background grid -->
-        <circle v-for="i in 5" :key="`grid-${i}`" 
-          :cx="size / 2" :cy="size / 2" 
-          :r="(i * size) / 12"
-          fill="none" stroke="rgba(168, 85, 247, 0.1)" stroke-width="1"
-        />
+    <div class="flex-1 flex justify-center items-center max-h-[320px] p-2">
+      <svg :viewBox="`0 0 ${size} ${size}`" class="w-full h-full max-h-full">
+          <circle v-for="i in 5" :key="`grid-${i}`" 
+            :cx="size / 2" :cy="size / 2" 
+            :r="(i * size) / 12"
+            fill="none" stroke="rgba(168, 85, 247, 0.1)" stroke-width="1"
+          />
         
-        <!-- Axis lines -->
         <g v-for="(label, i) in labels" :key="`axis-${i}`">
           <line
             :x1="size / 2"
             :y1="size / 2"
-            :x2="size / 2 + (size / 2.5) * Math.cos(angle(i) - Math.PI / 2)"
-            :y2="size / 2 + (size / 2.5) * Math.sin(angle(i) - Math.PI / 2)"
+            :x2="size / 2 + (size / 2.6) * Math.cos(angle(i) - Math.PI / 2)"
+            :y2="size / 2 + (size / 2.6) * Math.sin(angle(i) - Math.PI / 2)"
             stroke="rgba(168, 85, 247, 0.3)"
             stroke-width="1"
           />
-          <!-- Labels -->
           <text
-            :x="size / 2 + (size / 2.2) * Math.cos(angle(i) - Math.PI / 2)"
-            :y="size / 2 + (size / 2.2) * Math.sin(angle(i) - Math.PI / 2)"
+            :x="size / 2 + (size / 2.25) * Math.cos(angle(i) - Math.PI / 2)"
+            :y="size / 2 + (size / 2.25) * Math.sin(angle(i) - Math.PI / 2)"
             text-anchor="middle"
             dy="0.3em"
-            class="text-xs fill-purple-400 font-semibold"
+            class="text-sm fill-purple-400 font-semibold tracking-wide"
           >
             {{ label }}
           </text>
         </g>
 
-        <!-- Data polygon with animation -->
         <polygon
           :points="polygonPoints"
           fill="rgba(168, 85, 247, 0.15)"
@@ -42,7 +38,6 @@
           class="animate-fade-in"
         />
 
-        <!-- Data points -->
         <g>
           <defs>
             <linearGradient id="radarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -54,36 +49,30 @@
           <circle
             v-for="(value, i) in values"
             :key="`point-${i}`"
-            :cx="size / 2 + (value / 100) * (size / 2.5) * Math.cos(angle(i) - Math.PI / 2)"
-            :cy="size / 2 + (value / 100) * (size / 2.5) * Math.sin(angle(i) - Math.PI / 2)"
-            r="5"
+            :cx="size / 2 + (value / 100) * (size / 2.6) * Math.cos(angle(i) - Math.PI / 2)"
+            :cy="size / 2 + (value / 100) * (size / 2.6) * Math.sin(angle(i) - Math.PI / 2)"
+            r="6"
             fill="#ec4899"
             stroke="#c084fc"
             stroke-width="2"
-            class="hover:r-7 transition-all cursor-pointer"
+            class="hover:r-8 transition-all cursor-pointer"
             @mouseenter="hoveredIndex = i"
             @mouseleave="hoveredIndex = -1"
           />
 
-          <!-- Value labels on hover -->
           <text
             v-if="hoveredIndex === i"
             v-for="(value, i) in values"
             :key="`label-${i}`"
-            :x="size / 2 + (value / 100) * (size / 2.5) * Math.cos(angle(i) - Math.PI / 2)"
-            :y="size / 2 + (value / 100) * (size / 2.5) * Math.sin(angle(i) - Math.PI / 2) - 15"
+            :x="size / 2 + (value / 100) * (size / 2.6) * Math.cos(angle(i) - Math.PI / 2)"
+            :y="size / 2 + (value / 100) * (size / 2.6) * Math.sin(angle(i) - Math.PI / 2) - 15"
             text-anchor="middle"
-            class="text-sm fill-cyan-400 font-bold"
+            class="text-base fill-cyan-400 font-bold"
           >
             {{ value }}%
           </text>
         </g>
       </svg>
-    </div>
-
-    <!-- Legend -->
-    <div class="mt-6 text-center text-sm text-gray-400">
-      <p>Hover over points to see mastery levels</p>
     </div>
   </div>
 </template>
@@ -91,7 +80,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
-const size = 400
+// Mengecilkan ukuran canvas virtual agar teks/titik terlihat proporsional saat scaling
+const size = 450 
 const labels = ['Frameworks', 'Databases', 'API Design', 'DevOps', 'Architecture']
 const values = [92, 88, 90, 83, 87]
 const hoveredIndex = ref(-1)
@@ -101,8 +91,9 @@ const angle = (index: number) => (index * 2 * Math.PI) / labels.length
 const polygonPoints = computed(() => {
   return values
     .map((value, i) => {
-      const x = size / 2 + (value / 100) * (size / 2.5) * Math.cos(angle(i) - Math.PI / 2)
-      const y = size / 2 + (value / 100) * (size / 2.5) * Math.sin(angle(i) - Math.PI / 2)
+      // Menggunakan pembagi 2.6 agar chart tidak terlalu mepet ke ujung text label
+      const x = size / 2 + (value / 100) * (size / 2.6) * Math.cos(angle(i) - Math.PI / 2)
+      const y = size / 2 + (value / 100) * (size / 2.6) * Math.sin(angle(i) - Math.PI / 2)
       return `${x},${y}`
     })
     .join(' ')

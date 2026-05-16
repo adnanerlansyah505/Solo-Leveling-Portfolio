@@ -14,12 +14,12 @@ export const skills = {
   apiDesign: [
     { name: 'REST APIs', level: 95 },
     // { name: 'GraphQL', level: 85 },
-    { name: 'Microservices', level: 80 },
+    { name: 'Microservices', level: 60 },
     { name: 'API Security', level: 90 }
   ],
-  devOps: [
-    { name: 'CI/CD', level: 70 }
-  ],
+  // devOps: [
+  //   { name: 'CI/CD', level: 70 }
+  // ],
   architecture: [
     { name: 'System Design', level: 85 },
     { name: 'Database Design', level: 90 },
@@ -27,9 +27,12 @@ export const skills = {
     { name: 'Security Design', level: 80 }
   ],
   aiIntegration: [
-    { name: 'Github Copilot', level: 80 },
-    { name: 'Kiro', level: 75 },
+    { name: 'Github Copilot', level: 90 },
+    { name: 'Kiro', level: 90 },
     { name: 'ChatGPT', level: 90 },
+    { name: 'Gemini', level: 90 },
+    { name: 'Microsoft Copilot', level: 90 },
+    { name: 'Claude', level: 90 },
   ]
 };
 
