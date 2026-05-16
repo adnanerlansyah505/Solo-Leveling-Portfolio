@@ -37,7 +37,7 @@
           <div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-purple-500"></div>
           <div>
             <h1 class="text-3xl font-bold text-glow uppercase tracking-widest">Portfolio Leveling System</h1>
-            <p class="text-sm text-gray-400 font-mono mt-2">Portfolio v1.0 | Unauthorized access monitored.</p>
+            <p class="text-sm text-gray-400 font-mono mt-2">Portfolio | Unauthorized access monitored.</p>
           </div>
           <div class="text-right">
             <p class="text-xs text-gray-400">Hunter ID: <span class="text-cyan-400 font-bold">{{ hunterID }}</span></p>
@@ -67,7 +67,7 @@
       <!-- Footer -->
       <div class="mt-16 py-8 border-t border-purple-500/30">
         <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500 font-mono">
-          <p>Core Portfolio System Interface v1.0. Unauthorized access monitored.</p>
+          <p>Core Portfolio System Interface. Unauthorized access monitored.</p>
         </div>
       </div>
     </div>

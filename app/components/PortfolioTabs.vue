@@ -8,7 +8,7 @@
     <h2 class="text-3xl font-bold text-glow mb-8 uppercase tracking-wider text-center">Portfolio Directory</h2>
     
     <!-- Tab Navigation -->
-    <div class="flex items-center justify-between gap-2 mb-8 border-b border-purple-500/30">
+    <div class="flex items-center justify-between flex-wrap lg:flex-nowrap gap-8 lg:gap-4 mb-4 border-b border-purple-500/30">
       <div class="flex flex-wrap gap-2">
         <button
           type="button"
