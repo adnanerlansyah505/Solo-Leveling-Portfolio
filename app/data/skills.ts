@@ -6,8 +6,8 @@ export const skills = {
     { name: 'TailwindCSS', level: 95 }
   ],
   databases: [
-    { name: 'PostgreSQL', level: 90 },
-    { name: 'MongoDB', level: 70 },
+    { name: 'PostgreSQL', level: 85 },
+    { name: 'Mysql', level: 90 },
     // { name: 'Redis', level: 80 },
     // { name: 'Elasticsearch', level: 75 }
   ],
