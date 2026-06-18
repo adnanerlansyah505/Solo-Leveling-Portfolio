@@ -31,7 +31,7 @@
         <p class="text-purple-400 font-semibold">{{ profile.location }}</p>
       </div>
       <div class="p-3 bg-gray-900/40 border border-purple-500/20 rounded-md">
-        <p class="text-gray-400 text-xs">Join Date</p>
+        <p class="text-gray-400 text-xs">Birth Date</p>
         <p class="text-purple-400 font-semibold">{{ profile.joinDate }}</p>
       </div>
       <div class="p-3 bg-gray-900/40 border border-purple-500/20 rounded-md">

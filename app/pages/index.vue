@@ -12,19 +12,20 @@
       </div>
     </div>
 
-    <!-- Modals -->
-    <SystemInitializationModal
-      :is-open="showInitModal"
-      @submit="handleInitSubmit"
-      @close="handleInitClose"
-    />
+    <ClientOnly>
+      <SystemInitializationModal
+        :is-open="showInitModal"
+        @submit="handleInitSubmit"
+        @close="handleInitClose"
+      />
 
-    <ConfirmAccessModal
-      :is-open="showConfirmModal"
-      :hunterID="hunterID"
-      @accept="handleAccept"
-      @decline="handleDecline"
-    />
+      <ConfirmAccessModal
+        :is-open="showConfirmModal"
+        :hunterID="hunterID"
+        @accept="handleAccept"
+        @decline="handleDecline"
+      />
+    </ClientOnly>
 
     <!-- Main Content (shown after modal acceptance) -->
     <div v-if="hasAccessed" class="relative z-10 min-h-screen">
@@ -81,6 +82,14 @@ import ConfirmAccessModal from '~/components/ConfirmAccessModal.vue'
 import ProfileSidebar from '~/components/ProfileSidebar.vue'
 import CombinedStats from '~/components/CombinedStats.vue'
 import PortfolioTabs from '~/components/PortfolioTabs.vue'
+
+useSeoMeta({
+  title: 'Adnan Erlansyah - Leveling Portfolio',
+  description: "I'm so excited in the current technological developments, such as AI, Web Development, and more.",
+  ogTitle: 'Adnan Erlansyah - Leveling Portfolio',
+  ogDescription: "I'm so excited in the current technological developments, such as AI, Web Development, and more.",
+  ogImage: "/assets/images/avatar.png",
+})
 
 const STORAGE_KEY = 'solo-leveling-portfolio-session'
 const showInitModal = ref(true)

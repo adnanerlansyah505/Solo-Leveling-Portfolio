@@ -58,7 +58,9 @@
             class="hover:r-8 transition-all cursor-pointer"
             @mouseenter="hoveredIndex = i"
             @mouseleave="hoveredIndex = -1"
-          />
+          >
+  <title>{{ labels[i] }}: {{ value }}%</title>
+          </circle>
 
           <text
             v-if="hoveredIndex === i"
@@ -83,7 +85,7 @@ import { ref, computed } from 'vue'
 // Mengecilkan ukuran canvas virtual agar teks/titik terlihat proporsional saat scaling
 const size = 450 
 const labels = ['Frameworks', 'Databases', 'API Design', 'DevOps', 'Architecture']
-const values = [92, 88, 90, 83, 87]
+const values = [92, 88, 90, 70, 87]
 const hoveredIndex = ref(-1)
 
 const angle = (index: number) => (index * 2 * Math.PI) / labels.length

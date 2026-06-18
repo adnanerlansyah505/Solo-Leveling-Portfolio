@@ -57,6 +57,14 @@
           GitHub
         </a>
         <a
+          :href="project?.figma"
+          target="_blank"
+          class="flex-1 py-2 px-4 text-sm font-bold text-center bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 rounded-lg transition-all duration-300 hover:shadow-lg"
+          v-if="project?.figma"
+        >
+          Figma
+        </a>
+        <a
           :href="project.demo"
           target="_blank"
           class="flex-1 py-2 px-4 text-sm font-bold text-center border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 rounded-lg transition-all duration-300"

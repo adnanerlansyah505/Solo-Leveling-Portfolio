@@ -45,7 +45,7 @@ export const projects = [
     description: 'A polished Figma design concept for a futuristic e-commerce experience with Solo Leveling-inspired visuals.',
     tech: ['Figma', 'UI Design', 'Prototyping'],
     status: 'Design',
-    github: 'https://www.figma.com/design/zgci57DWPgu5Z5tofd9wwK/E-Commerce?m=auto&t=nLSp216baXVLgJOl-6',
+    figma: 'https://www.figma.com/design/zgci57DWPgu5Z5tofd9wwK/E-Commerce?m=auto&t=nLSp216baXVLgJOl-6',
     // demo: 'https://www.figma.com/design/zgci57DWPgu5Z5tofd9wwK/E-Commerce?m=auto&t=nLSp216baXVLgJOl-6',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop'
   },
@@ -68,5 +68,15 @@ export const projects = [
     // github: 'https://github.com/adnanerlansyah505/Job-Portal',
     demo: 'https://jobs.alkademi.id',
     image: '/assets/images/projects/job-portal.png'
+  },
+  {
+    id: 8,
+    name: 'ADA ASEAN',
+    description: 'The ASEAN Digital Academy (ADA) is a regional e-learning platform developed by the ASEAN Foundation in collaboration with Infoxchange to strengthen digital literacy, cybersecurity awareness, and future-ready digital skills among youth across Southeast Asia. The platform provides free and accessible learning opportunities, helping bridge the digital divide and support the goals of the ASEAN Digital Masterplan.',
+    tech: ['Laravel 8', 'PostgreSQL', 'Bootstrap'],
+    status: 'Completed',
+    // github: 'https://github.com/adnanerlansyah505/Job-Portal',
+    demo: 'https://ada.aseanfoundation.org/',
+    image: '/assets/images/projects/ada-asean.png'
   }
 ];
