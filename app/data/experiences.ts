@@ -2,10 +2,10 @@
 export const experiences = [
     {
         id: 1,
-        position: 'Quality Assurance Intern',
+        position: 'Quality Assurance Staff',
         company: 'Alkademi',
         year: '2023 - August 2024',
-        description: 'As a Quality Assurance Intern at Alkademi, I was responsible for testing and validating software applications to ensure they met quality standards. I collaborated with the development team to identify and report bugs, participated in test case creation, and contributed to improving the overall software development process. This experience allowed me to gain hands-on experience in software testing methodologies and tools, while also enhancing my attention to detail and problem-solving skills.'
+        description: 'As a Quality Assurance Staff at Alkademi, I was responsible for testing and validating software applications to ensure they met quality standards. I collaborated with the development team to identify and report bugs, participated in test case creation, and contributed to improving the overall software development process. This experience allowed me to gain hands-on experience in software testing methodologies and tools, while also enhancing my attention to detail and problem-solving skills.'
     },
     {
         id: 2,
@@ -16,9 +16,9 @@ export const experiences = [
     },
     {
         id: 3,
-        position: 'Junior Web Developer',
+        position: 'Web Developer',
         company: 'PT. Raditya Alkademi',
         year: '2025 - Present',
-        description: 'As a Junior Web Developer at PT. Raditya Alkademi, I am responsible for assisting in the development and maintenance of web applications using technologies such as React, Node.js, and TypeScript. I collaborate with senior developers to implement new features, fix bugs, and optimize performance. This role allows me to further develop my skills in web development while contributing to the success of the company\'s projects.'
+        description: 'As a Web Developer at PT. Raditya Alkademi, I am responsible for developing and maintaining web applications using technologies such as React, Node.js, and TypeScript. I collaborate with senior developers to implement new features, fix bugs, and optimize performance. This role allows me to further develop my skills in web development while contributing to the success of the company\'s projects.'
     }
 ]
